@@ -14,7 +14,7 @@ export function Logo({ to = '/', size = 'sm', className }: LogoProps) {
     <img
       src="/swastya-sathi-mark.svg"
       alt=""
-      className={cn('shrink-0', size === 'md' ? 'h-9 w-9' : 'h-7 w-7')}
+      className={cn('shrink-0', size === 'md' ? 'h-12 w-12' : 'h-9 w-9')}
       aria-hidden="true"
     />
   );
@@ -25,7 +25,7 @@ export function Logo({ to = '/', size = 'sm', className }: LogoProps) {
       <span
       className={cn(
         'block truncate font-semibold leading-tight tracking-[-0.01em] text-brand',
-        size === 'md' ? 'text-base' : 'text-[13px]'
+        size === 'md' ? 'text-lg' : 'text-sm'
       )}>
       
         Swastya Sathi
@@ -33,7 +33,7 @@ export function Logo({ to = '/', size = 'sm', className }: LogoProps) {
       <span
       className={cn(
         'block truncate font-medium uppercase tracking-[0.14em] text-ink-400',
-        size === 'md' ? 'text-[9px]' : 'text-[8px]'
+        size === 'md' ? 'text-[10px]' : 'text-[9px]'
       )}>
       
         Healthcare App
