@@ -1,0 +1,67 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  background-color: #ffffff;
+}
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  color: #0f2942;
+  -webkit-font-smoothing: antialiased;
+}
+/* Clean, compact Leaflet chrome to match the app's hairline card language */
+.leaflet-container {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  background: #eef1f4;
+}
+.leaflet-control-zoom {
+  border: 1px solid #e7e9ee !important;
+  border-radius: 6px !important;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(15, 41, 66, 0.06) !important;
+}
+.leaflet-control-zoom a {
+  width: 28px !important;
+  height: 28px !important;
+  line-height: 28px !important;
+  color: #0f2942 !important;
+  border-bottom-color: #eef0f4 !important;
+  font-weight: 500;
+}
+.leaflet-control-attribution {
+  font-size: 10px !important;
+  color: #94a3b8 !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+}
+.ss-marker {
+  background: transparent;
+  border: 0;
+}
+.ss-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ss-scroll {
+  scrollbar-width: thin;
+}
+.ss-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.ss-scroll::-webkit-scrollbar-thumb {
+  background: #e2e6ec;
+  border-radius: 999px;
+}
