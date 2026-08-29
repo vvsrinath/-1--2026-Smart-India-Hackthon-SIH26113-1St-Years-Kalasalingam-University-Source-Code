@@ -1,0 +1,36 @@
+{
+  "app": {
+    "name": "ਸਵੱਸਥਿਆ ਸਾਠੀ",
+    "tagline": "ਹਰੇਕ ਗਾੜ੍ਹ ਨੂੰ ਬਿਹਤਰ ਸਿਹਤ ਨਾਲ ਜੋੜਨਾ"
+  },
+  "home": {
+    "greeting": "ਸੁਪ੍ਰਭਾਤ",
+    "patientName": "ਰਮੇਸ਼",
+    "question": "ਅੱਜ ਤੁਹਾਨੂੰ ਕੀ ਚਾਹੀਦਾ ਹੈ?",
+    "findHealthcare": "ਸਿਹਤ ਸੇਵਾ ਲੱਭੋ",
+    "talkToDoctor": "ਡਾਕਟਰ ਨਾਲ ਗੱਲ ਕਰੋ",
+    "appointments": "ਮੇਰੇ ਨਿਯੁਕਤੀਆਂ",
+    "trackReferral": "ਰਿਫਰਲ ਟਰੈਕ ਕਰੋ",
+    "medicines": "ਦਵਾਈਆਂ",
+    "records": "ਮੇਰੇ ਰਿਕਾਰਡ"
+  },
+  "nav": {
+    "home": "ਹੋਮ",
+    "care": "ਕੇਅਰ",
+    "records": "ਰਿਕਾਰਡ",
+    "profile": "ਪ੍ਰੋਫਾਈਲ",
+    "more": "ਹੋਰ"
+  },
+  "pwa": {
+    "installTitle": "ਸਵੱਸਥਿਆ ਸਾਠੀ ਇੰਸਟਾਲ ਕਰੋ",
+    "installDescription": "ਹੋਮ ਸਕ੍ਰੀਨ ਤੋਂ ਸਿਹਤ ਸੇਵਾਵਾਂ ਤੇ ਜਲਦੀ ਪਹੁੰਚੋ।",
+    "installAction": "ਐਪ ਇੰਸਟਾਲ ਕਰੋ",
+    "dismissAction": "ਹੁਣ ਨਹੀਂ",
+    "installed": "ਸਵੱਸਥਿਆ ਸਾਠੀ ਹੁਣ ਇੰਸਟਾਲ ਹੈ।",
+    "openApp": "ਐਪ ਖੋਲ੍ਹੋ",
+    "offline": "ਮੁੱਦਰਾ ਕਨੈਕਸ਼ਨ",
+    "offlineMessage": "ਤੁਸੀਂ ਇਸ ਵੇਲੇ ਆਫਲਾਈਨ ਹੋ।",
+    "online": "ਕਨੈਕਸ਼ਨ ਬਹਾਲ ਹੋਇਆ",
+    "syncing": "3 ਰਿਕਾਰਡ ਸਿੰਕ ਹੋ ਗਏ"
+  }
+}

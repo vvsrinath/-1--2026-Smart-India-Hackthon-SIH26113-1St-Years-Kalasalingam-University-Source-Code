@@ -1,0 +1,36 @@
+{
+  "app": {
+    "name": "سواتھیا ستھی",
+    "tagline": "ہر گاؤں کو بہتر صحت کی خدمتوں سے جوڑنا"
+  },
+  "home": {
+    "greeting": "صبح بخیر",
+    "patientName": "رمیش",
+    "question": "آج آپ کو کیا درکار ہے؟",
+    "findHealthcare": "صحت کی خدمت تلاش کریں",
+    "talkToDoctor": "ڈاکٹر سے بات کریں",
+    "appointments": "میرے اپوائنٹمنٹس",
+    "trackReferral": "ریفرسل ٹریک کریں",
+    "medicines": "دواں",
+    "records": "میرے ریکارڈز"
+  },
+  "nav": {
+    "home": "ہوم",
+    "care": "کیئر",
+    "records": "ریکارڈز",
+    "profile": "پروفائل",
+    "more": "مزید"
+  },
+  "pwa": {
+    "installTitle": "سواتھیا ستھی انسٹال کریں",
+    "installDescription": "ہوم اسکرین سے صحت کی خدمات تیزی سے حاصل کریں۔",
+    "installAction": "ایپ انسٹال کریں",
+    "dismissAction": "ابھی نہیں",
+    "installed": "سواتھیا ستھی اب انسٹال ہے۔",
+    "openApp": "ایپ کھولیں",
+    "offline": "محدود کنکشن",
+    "offlineMessage": "آپ فی الحال آف لائن ہیں۔",
+    "online": "کونیکشن بحال ہوگیا",
+    "syncing": "3 ریکارڈ synced ہو گئے"
+  }
+}

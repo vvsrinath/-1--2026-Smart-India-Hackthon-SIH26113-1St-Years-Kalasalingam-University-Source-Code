@@ -1,0 +1,36 @@
+{
+  "app": {
+    "name": "Swasthya Sathi",
+    "tagline": "Connecting Every Village to Better Healthcare"
+  },
+  "home": {
+    "greeting": "Good morning",
+    "patientName": "Ramesh",
+    "question": "What do you need today?",
+    "findHealthcare": "Find Healthcare",
+    "talkToDoctor": "Talk to Doctor",
+    "appointments": "My Appointments",
+    "trackReferral": "Track Referral",
+    "medicines": "Medicines",
+    "records": "My Records"
+  },
+  "nav": {
+    "home": "Home",
+    "care": "Care",
+    "records": "Records",
+    "profile": "Profile",
+    "more": "More"
+  },
+  "pwa": {
+    "installTitle": "Install Swasthya Sathi",
+    "installDescription": "Get faster access to healthcare services from your home screen.",
+    "installAction": "Install App",
+    "dismissAction": "Not Now",
+    "installed": "Swasthya Sathi is now installed.",
+    "openApp": "Open App",
+    "offline": "Limited Connection",
+    "offlineMessage": "You are currently offline.",
+    "online": "Connection restored",
+    "syncing": "3 records synchronized"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Swasthya Sathi",
+  "short_name": "Swasthya Sathi",
+  "description": "Connecting Every Village to Better Healthcare",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5faf7",
+  "theme_color": "#0b6b3a",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
