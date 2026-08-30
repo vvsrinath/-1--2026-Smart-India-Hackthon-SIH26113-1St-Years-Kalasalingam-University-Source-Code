@@ -6,6 +6,7 @@ import { useScrollToTop } from './hooks/useScrollToTop';
 import { InstallAppBanner } from './components/pwa/InstallAppBanner';
 import { NativeTitleBar } from './components/pwa/NativeTitleBar';
 import { OfflineStatus } from './components/pwa/OfflineStatus';
+import { ChatWidget } from './components/chat/ChatWidget';
 
 function AppShell() {
   useScrollToTop();
@@ -16,6 +17,7 @@ function AppShell() {
       <NativeTitleBar />
       <OfflineStatus />
       <AppRoutes />
+      <ChatWidget />
       {!installDismissed && <InstallAppBanner onDismiss={() => setInstallDismissed(true)} />}
     </>
   );

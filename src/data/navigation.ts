@@ -1,5 +1,6 @@
 import {
   BellIcon,
+  BotIcon,
   CalendarDaysIcon,
   ClipboardListIcon,
   FileTextIcon,
@@ -41,6 +42,7 @@ export const publicNav = [
 
 export const patientNav: NavItem[] = [
 { label: 'Dashboard', to: '/patient', icon: LayoutDashboardIcon, end: true },
+{ label: 'AI Care Assistant', to: '/patient/assistant', icon: BotIcon },
 { label: 'Find Services', to: '/patient/find-healthcare', icon: MapPinIcon },
 { label: 'Appointments', to: '/patient/appointments', icon: CalendarDaysIcon },
 { label: 'Consult Online', to: '/patient/consult-online', icon: VideoIcon },

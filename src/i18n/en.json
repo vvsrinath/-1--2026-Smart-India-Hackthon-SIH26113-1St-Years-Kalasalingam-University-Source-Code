@@ -32,5 +32,19 @@
     "offlineMessage": "You are currently offline.",
     "online": "Connection restored",
     "syncing": "3 records synchronized"
+  },
+  "chat": {
+    "title": "Swasthya Mitra",
+    "subtitle": "AI care assistant",
+    "placeholder": "Ask about symptoms, appointments, records…",
+    "send": "Send message",
+    "open": "Open AI assistant",
+    "close": "Close AI assistant",
+    "reset": "Start a new conversation",
+    "emptyTitle": "How can I help you today?",
+    "emptyHint": "Ask about health information, using the app, or translate a phrase. I answer in your language.",
+    "backendOffline": "The AI assistant server is offline or unreachable.",
+    "error": "Sorry, I could not reach the assistant right now. Please try again.",
+    "backendNotConfigured": "The AI assistant is not configured yet. Add your Groq API key in backend/.env to enable it."
   }
 }

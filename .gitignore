@@ -25,3 +25,11 @@ dist-ssr
 
 # Vite cache
 .vite
+
+# Python backend
+backend/.venv/
+backend/.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.python-version

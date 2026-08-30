@@ -36,6 +36,7 @@ import { NotFound } from '../pages/public/NotFound';
 import { Login } from '../pages/auth/Login';
 
 import { PatientDashboard } from '../pages/patient/PatientDashboard';
+import { AIChatAssistant } from '../pages/patient/AIChatAssistant';
 import { FindHealthcare } from '../pages/patient/FindHealthcare';
 import { PatientAppointments } from '../pages/patient/PatientAppointments';
 import { HealthRecords } from '../pages/patient/HealthRecords';
@@ -109,6 +110,7 @@ export function AppRoutes() {
       {/* Patient workspace */}
       <Route path="/patient" element={<PatientLayout />}>
         <Route index element={<PatientDashboard />} />
+        <Route path="assistant" element={<AIChatAssistant />} />
         <Route path="find-healthcare" element={<FindHealthcare />} />
         <Route path="appointments" element={<PatientAppointments />} />
         <Route path="records" element={<HealthRecords />} />

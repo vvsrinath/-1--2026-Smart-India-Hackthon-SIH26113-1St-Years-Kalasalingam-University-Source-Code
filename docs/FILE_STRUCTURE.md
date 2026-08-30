@@ -9,7 +9,8 @@ then read `README.md` for how the app works.
 .
 ├── .github/
 │   └── workflows/deploy.yml   # Auto-build + publish to GitHub Pages on push
-├── docs/                      # This guide + deployment / PWA testing guides
+├── docs/                      # This guide + deployment / PWA testing / backend guides
+├── backend/                   # Python FastAPI AI service (Swarm multi-agent × Groq)
 ├── public/                    # Static files copied as-is into the built site
 ├── src/                       # All React + TypeScript application code
 ├── index.html                 # Vite HTML entry (title, favicon, PWA meta)
@@ -41,6 +42,28 @@ public/
 │   └── icon-maskable.png
 └── images/                    # Sample photos used by demo screens
     └── *.jpg                  # Random-named demo photos (do not rename)
+```
+
+## `backend/` — AI Service (Python)
+
+FastAPI + OpenAI Swarm (multi-agent) calling Groq for inference. Powers the
+in-app AI assistant. Full setup: `docs/BACKEND_GUIDE.md`.
+
+```text
+backend/
+├── app/
+│   ├── main.py          # FastAPI routes + SSE streaming
+│   ├── agents.py        # Swarm agents (Triage, Medical, Care, Wording) + handoffs
+│   ├── groq_client.py   # OpenAI client -> Groq endpoint
+│   ├── languages.py     # 12 interface languages (detection + names)
+│   ├── memory.py        # in-memory per-session conversation store
+│   ├── schemas.py       # request/response models
+│   ├── security.py      # multilingual emergency filter (no LLM needed)
+│   └── config.py        # env-driven settings (.env)
+├── tests/               # pytest suite (runs without a Groq key)
+├── requirements.txt
+├── .env.example         # copy to .env and add GROQ_API_KEY
+└── .venv/               # local virtualenv (gitignored)
 ```
 
 ## `src/` — Application Code
@@ -79,6 +102,7 @@ src/
 │                              #   patients, referrals
 │
 ├── components/                # Reusable UI, grouped by what they do
+│   ├── chat/                  #   ChatPanel (shared chat UI), ChatWidget (floating)
 │   ├── common/                #   Buttons, Input, Modal, Panel, Tabs, badges,
 │   │                          #   EmptyState, SearchBar, Rating, Timeline…  (17 files)
 │   ├── dashboard/             #   StatCard, ActivityList (dashboard pieces)
@@ -90,6 +114,9 @@ src/
 │   │                          #   DashboardHeader
 │   └── pwa/                   #   Install banner (desktop/phone/tablet variants),
 │                              #   NativeTitleBar, OfflineStatus
+│
+├── api/                       # Backend client (SSE chat, translate, health)
+│   └── backend.ts             #   streamChat() + helpers, API base URL
 │
 ├── context/                   # Shared React context
 │   └── LanguageContext.tsx    #   LanguageProvider + useLanguage()

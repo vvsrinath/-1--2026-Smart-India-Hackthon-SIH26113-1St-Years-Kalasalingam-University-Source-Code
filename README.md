@@ -12,6 +12,7 @@ This is currently a frontend demo. The screens use local demo data, so there is 
 - ✅ **Desktop-App Feel on PC** – Custom draggable title bar in the Window Controls Overlay on installed desktop PWAs, with native minimize/maximize/close
 - ✅ **Device-Wise Install Prompts** – Desktop offers a native desktop app (Windows/macOS/Linux detected), tablets say “Install for tab”, phones say “Install phone”
 - ✅ **Responsive Design** – Desktop sidebar, tablet nav, mobile bottom nav (same React app)
+- ✅ **AI Care Assistant (Swasthya Mitra)** – Swarm multi-agent + Groq: understands intent and language, answers health/app questions and translates, replying in any of the 12 supported languages (floating widget + patient chat page)
 - ✅ **6 Role Workspaces** – Patient, Doctor, Specialist, Health Worker, PHC, Admin
 - ✅ **Multi-Language** – 12 Indian languages (English, Hindi, Tamil, Telugu, Marathi, Bengali, Gujarati, Kannada, Malayalam, Oriya, Punjabi, Urdu)
 - ✅ **Service Worker** – Network-first for pages, cache-first for assets
@@ -23,6 +24,7 @@ This is currently a frontend demo. The screens use local demo data, so there is 
 - **[FILE_STRUCTURE.md](docs/FILE_STRUCTURE.md)** – Map of every folder and file in the repo
 - **[PWA_TESTING_GUIDE.md](docs/PWA_TESTING_GUIDE.md)** – How to test install prompt, offline mode, service worker
 - **[DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md)** – Deploy to Netlify, Vercel, Docker, or custom servers
+- **[BACKEND_GUIDE.md](docs/BACKEND_GUIDE.md)** – Run the Swarm × Groq AI assistant backend (Python + FastAPI)
 
 ## Run The App
 
@@ -42,6 +44,23 @@ npm run build    # Create a production build in dist/
 npm run preview  # Preview the production build locally
 npm run lint     # Check JavaScript and TypeScript files with ESLint
 ```
+
+### Running the AI assistant (optional but recommended)
+
+The AI assistant lives in a small Python backend (`backend/`). See
+**[docs/BACKEND_GUIDE.md](docs/BACKEND_GUIDE.md)** for full setup. Summary:
+
+```bash
+cd backend
+python -m venv .venv
+.venv/bin/pip install -r requirements.txt
+cp .env.example .env      # then add your free Groq API key from console.groq.com
+.venv/bin/uvicorn app.main:app --reload --port 8000
+```
+
+The frontend talks to `http://localhost:8000` by default (override with a
+`VITE_API_BASE_URL` env var at build time). Without the backend running, the
+chat widget shows a friendly "offline" notice instead of failing.
 
 ## How The App Starts
 
@@ -86,6 +105,7 @@ Patient screens use `PatientLayout` and start at `/patient`:
 | URL | Purpose |
 | --- | --- |
 | `/patient` | Patient dashboard |
+| `/patient/assistant` | AI care assistant chat |
 | `/patient/find-healthcare` | Find doctors and facilities |
 | `/patient/appointments` | View appointments |
 | `/patient/records` | View health records |
@@ -134,7 +154,14 @@ A quick view of the layout. For an annotated, file-by-file map, see **[docs/FILE
 ├── docs/                         Project guides
 │   ├── FILE_STRUCTURE.md         Map of every folder and file
 │   ├── DEPLOYMENT_GUIDE.md       Deploy to Netlify, Vercel, Docker, etc.
-│   └── PWA_TESTING_GUIDE.md      Test install prompt, offline, service worker
+│   ├── PWA_TESTING_GUIDE.md      Test install prompt, offline, service worker
+│   └── BACKEND_GUIDE.md          Run the AI assistant backend (Swarm × Groq)
+│
+├── backend/                      Python FastAPI + Swarm × Groq AI service
+│   ├── app/                      API, agents, language detection, memory
+│   ├── tests/                    Pytest suite (no key needed)
+│   ├── requirements.txt
+│   └── .env.example              -> copy to .env, add GROQ_API_KEY
 │
 ├── public/                       Static files copied as-is to the build
 │   ├── index.html assets not needed here
@@ -239,4 +266,4 @@ When adding a new screen, prefer the existing Tailwind classes and common compon
 - Data is stored in source files and resets when the app reloads.
 - Language options other than English fall back to English content.
 - Several secondary screens intentionally use `WorkspacePlaceholder`.
-- No backend, API, database, real map search, or persistent user session is connected yet.
+- App data is still local demo data (no database yet). The AI assistant backend (`backend/`) is real, but health/appointment data is not yet served by an API.
