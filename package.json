@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx vite",
-    "build": "npx vite build",
+    "build": "npx vite build && node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\"",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "preview": "npx vite preview"
   },

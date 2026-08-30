@@ -83,9 +83,10 @@ to `main` it:
 To enable it: **Settings → Pages → Source: GitHub Actions** (it must be set to
 "GitHub Actions" for the `actions/deploy-pages` step to work).
 
-> For client-side routing on GitHub Pages, add a `404.html` copy of `index.html`
-> to the deployed output so unknown routes fall back to the app. GitHub Pages
-> serves `404.html` for unmatched paths.
+> For client-side routing on GitHub Pages, `npm run build` also emits a
+> `404.html` copy of the built `index.html`, so unknown routes fall back to the
+> app (GitHub Pages serves `404.html` for unmatched paths). Enabled by default
+> in the build script.
 
 ### 3. Netlify
 The previous `netlify.toml` was removed when the app moved to the repo root, but
