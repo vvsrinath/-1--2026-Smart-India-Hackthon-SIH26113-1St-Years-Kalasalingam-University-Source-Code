@@ -1,4 +1,3 @@
-import React from 'react';
 import { DownloadIcon, ShareIcon, XIcon } from 'lucide-react';
 import { Button } from '../common/Button';
 import { usePwa } from '../../hooks/usePwa';

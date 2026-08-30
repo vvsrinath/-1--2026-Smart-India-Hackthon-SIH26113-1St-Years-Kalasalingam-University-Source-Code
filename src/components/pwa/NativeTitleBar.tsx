@@ -1,4 +1,3 @@
-import React from 'react';
 import { useWindowControlsOverlay } from '../../hooks/useWindowControlsOverlay';
 import { DESKTOP_OS_LABELS, detectDesktopOS } from '../../hooks/useDesktop';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MonitorDownIcon, XIcon } from 'lucide-react';
 import { Button } from '../common/Button';
 
