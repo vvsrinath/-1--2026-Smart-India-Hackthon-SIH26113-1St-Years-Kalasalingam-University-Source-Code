@@ -20,6 +20,8 @@ then read `README.md` for how the app works.
 ├── tsconfig.json              # TypeScript compiler settings (app)
 ├── tsconfig.node.json         # TypeScript settings (config files / node)
 ├── vercel.json                # Vercel SPA fallback routing + security headers
+├── render.yaml                # Render Blueprint (AI backend service)
+├── .env.example               # Frontend build-time env (VITE_API_BASE_URL)
 ├── vite.config.ts             # Vite + React plugin configuration
 ├── README.md                  # Project overview, routes, how-tos
 └── DEPLOYMENT, PWA guides     # now inside docs/

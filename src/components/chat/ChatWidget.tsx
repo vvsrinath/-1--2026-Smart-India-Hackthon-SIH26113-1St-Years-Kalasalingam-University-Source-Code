@@ -1,13 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { BotIcon, XIcon } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { useLanguage } from '../../context/LanguageContext';
 import { ChatPanel } from './ChatPanel';
 
+const WORKSPACE_PREFIXES = ['/patient', '/doctor', '/specialist', '/worker', '/phc', '/admin'];
+
 export function ChatWidget() {
   const { t } = useLanguage();
+  const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const inWorkspace = WORKSPACE_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+  const onAssistantPage = pathname === '/patient/assistant';
 
   useEffect(() => {
     if (!open) return;
@@ -17,6 +24,12 @@ export function ChatWidget() {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [open]);
+
+  useEffect(() => {
+    if (!inWorkspace || onAssistantPage) setOpen(false);
+  }, [pathname, inWorkspace, onAssistantPage]);
+
+  if (!inWorkspace || onAssistantPage) return null;
 
   return (
     <div className="fixed bottom-[4.75rem] right-4 z-50 md:bottom-6 md:right-6">

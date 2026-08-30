@@ -1,0 +1,24 @@
+# Render Blueprint — AI assistant backend only.
+# The React frontend already deploys via GitHub Pages or Vercel (see docs/DEPLOYMENT_GUIDE.md).
+#
+# In the Render dashboard:
+#   1. New -> Blueprint -> connect this repo
+#   2. Set GROQ_API_KEY in the service's environment (it is deliberately not committed)
+#   3. Deploy; then set VITE_API_BASE_URL in a root .env before the next frontend build.
+
+services:
+  - type: web
+    name: swasthya-sathi-ai
+    runtime: python
+    plan: free
+    rootDir: backend
+    healthCheckPath: /api/v1/health
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: FALLBACK_MODEL
+        value: llama-3.1-8b-instant

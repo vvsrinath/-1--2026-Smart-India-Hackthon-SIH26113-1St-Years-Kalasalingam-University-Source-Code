@@ -123,13 +123,21 @@ the SSE framing are verified with mocks.
 
 Run this as a **separate long-lived service** (not on the static host):
 
-1. **Render** (recommended): New Web Service → repo → root `backend/` →
-   build `pip install -r requirements.txt` → start `.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port $PORT` → add `GROQ_API_KEY` to env vars.
+1. **Render (recommended, one click)**: the repo's `render.yaml` Blueprint already
+   defines this backend as a Python web service rooted at `backend/`. In Render:
+   New → Blueprint → connect the repo → set the **GROQ_API_KEY** env var (it is
+   deliberately never committed) → Deploy. Health check hits `/api/v1/health`.
+   Alternatively create a plain New Web Service with:
+   - Root directory: `backend`
+   - Build command: `pip install -r requirements.txt`
+   - Start command: `.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 2. **Railway**: same idea — start command
-   `uvicorn app.main:app --host 0.0.0.0 --port $PORT`.
+   `uvicorn app.main:app --host 0.0.0.0 --port $PORT` (a `backend/Procfile` is
+   included for Procfile-based hosts).
 3. Point the frontend at the deployed URL:
-   create a root `.env` with `VITE_API_BASE_URL=https://your-backend.onrender.com`
-   (used at build time by `npm run build`).
+   copy the root `.env.example` to `.env` and set
+   `VITE_API_BASE_URL=https://your-backend.onrender.com`
+   before running `npm run build`.
 
 ## Folder layout
 

@@ -43,6 +43,10 @@ Other useful commands:
 npm run build    # Create a production build in dist/
 npm run preview  # Preview the production build locally
 npm run lint     # Check JavaScript and TypeScript files with ESLint
+
+npm run backend:setup   # Create backend/.venv and install Python deps
+npm run backend:dev     # Run the AI backend on http://localhost:8000
+npm run backend:test    # Run the backend pytest suite
 ```
 
 ### Running the AI assistant (optional but recommended)
