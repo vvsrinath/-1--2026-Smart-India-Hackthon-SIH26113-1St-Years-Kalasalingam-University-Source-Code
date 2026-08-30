@@ -12,7 +12,7 @@ export const demoDoctors: Doctor[] = [
   experienceYears: 12,
   rating: 4.5,
   reviews: 128,
-  photo: "/fcce296d-1fc9-4293-8987-db518cd130f0.jpg",
+  photo: "/images/fcce296d-1fc9-4293-8987-db518cd130f0.jpg",
 
   languages: ['English', 'Hindi']
 },

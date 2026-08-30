@@ -114,23 +114,50 @@ Specialist screens use `SpecialistLayout` and follow the same pattern as the doc
 ## Folder Guide
 
 ```text
-src/
-  App.tsx                 Top-level providers and app shell
-  index.tsx               React entry point
-  index.css               Global CSS, Tailwind imports, and Leaflet styles
-  routes/                 URL-to-page definitions
-  layouts/                Shared shells for public/auth/workspace screens
-  pages/                  Full screens grouped by user role
-  components/common/      Reusable buttons, panels, inputs, tabs, and states
-  components/dashboard/   Dashboard-specific cards and activity lists
-  components/healthcare/  Appointment, facility, record, tip, and referral UI
-  components/navigation/  Headers, sidebars, footer, language selector, logo
-  components/maps/        Healthcare map UI
-  context/                Shared React context, currently language state
-  data/                   Local demo appointments, doctors, records, and more
-  hooks/                   Reusable React hooks
-  types/                  Shared TypeScript types
-  utils/                  Small utilities such as the class-name helper
+.
+├── index.html                    Vite entry HTML (title, favicon, PWA meta)
+├── vercel.json                   Vercel edge SPA routing + security headers
+├── vite.config.ts                Vite + React plugin config
+├── tailwind.config.js            Brand colors, fonts, shadows, spacing
+├── postcss.config.js             Tailwind/autoprefixer plumbing
+├── tsconfig.json / tsconfig.node.json   TypeScript config
+├── package.json                  npm scripts and dependencies
+├── .github/workflows/deploy.yml  GitHub Pages build & deploy (optional)
+│
+├── public/                       Static files copied as-is to the build
+│   ├── index.html assets not needed here
+│   ├── favicon.png               Browser tab icon
+│   ├── logo.png                  App logo (header, favicon, PWA icons)
+│   ├── images/                   Sample photos (patients, doctors, tips)
+│   ├── icons/                    PWA install icons (192/512/maskable/apple)
+│   ├── manifest.webmanifest      PWA manifest (name, icons, standalone)
+│   └── sw.js                     Service worker (offline caching)
+│
+└── src/                          Application source
+    ├── index.tsx                 React entry point
+    ├── App.tsx                   Top-level providers and app shell
+    ├── index.css                 Global CSS, Tailwind and Leaflet styles
+    ├── routes/                   URL-to-page definitions (AppRoutes)
+    ├── layouts/                  Shared shells: public, auth, workspaces
+    ├── pages/                    Full screens grouped by user role
+    │   ├── public/               Home, About, Services, Contact, NotFound
+    │   ├── auth/                 Login
+    │   ├── patient/              Patient workflow screens
+    │   ├── doctor/               Doctor workflow screens
+    │   └── specialist/           Specialist workflow screens
+    ├── components/               Reusable UI
+    │   ├── common/               Buttons, panels, inputs, tabs, states
+    │   ├── dashboard/            Dashboard cards and activity lists
+    │   ├── healthcare/           Appointment, facility, record, tip cards
+    │   ├── navigation/           Headers, sidebars, footer, logo, language
+    │   ├── maps/                 Leaflet healthcare map
+    │   └── pwa/                  Install banner, offline status
+    ├── context/                  Shared React context (language)
+    ├── data/                     Local demo data (appointments, patients…)
+    ├── hooks/                    Reusable React hooks
+    ├── i18n/                     13 language dictionaries + index
+    ├── types/                    Shared TypeScript types
+    └── utils/                    Small utilities (className helper)
 ```
 
 ## Layouts And Pages

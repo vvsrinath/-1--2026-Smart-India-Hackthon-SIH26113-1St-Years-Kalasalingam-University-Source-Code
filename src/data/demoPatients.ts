@@ -12,7 +12,7 @@ export const demoPatients: Patient[] = [
   phone: '+91 90000 00001',
   city: 'Patna, Bihar',
   bloodGroup: 'B+',
-  photo: "/fcce296d-1fc9-4293-8987-db518cd130f0.jpg",
+  photo: "/images/fcce296d-1fc9-4293-8987-db518cd130f0.jpg",
 
   conditions: ['Viral fever (current)', 'No known allergies']
 },

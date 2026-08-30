@@ -164,7 +164,7 @@ export const howItWorksSteps = [
 }];
 
 
-export const heroImage = "/443e6e94-7c12-4d95-8359-b832657ea7f8.jpg";
+export const heroImage = "/images/443e6e94-7c12-4d95-8359-b832657ea7f8.jpg";
 
 
-export const doctorImage = "/fcce296d-1fc9-4293-8987-db518cd130f0.jpg";
+export const doctorImage = "/images/fcce296d-1fc9-4293-8987-db518cd130f0.jpg";
