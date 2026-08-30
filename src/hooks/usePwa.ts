@@ -25,7 +25,10 @@ export function usePwa() {
     window.addEventListener('beforeinstallprompt', onBeforeInstallPrompt);
     window.addEventListener('appinstalled', onAppInstalled);
 
-    const standalone = window.matchMedia('(display-mode: standalone)').matches || (window.navigator as Navigator & { standalone?: boolean }).standalone;
+    const standalone =
+      window.matchMedia('(display-mode: standalone)').matches ||
+      window.matchMedia('(display-mode: window-controls-overlay)').matches ||
+      (window.navigator as Navigator & { standalone?: boolean }).standalone;
     setIsInstalled(Boolean(standalone));
 
     // Phone/tablet detection: a coarse pointer means a touch device.

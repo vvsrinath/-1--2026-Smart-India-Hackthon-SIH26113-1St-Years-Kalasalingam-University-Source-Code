@@ -4,6 +4,7 @@
   "description": "Connecting Every Village to Better Healthcare",
   "start_url": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
   "orientation": "portrait",
   "background_color": "#f5faf7",
   "theme_color": "#0b6b3a",
