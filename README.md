@@ -7,6 +7,8 @@ This is currently a frontend demo. The screens use local demo data, so there is 
 ## ⭐ Key Features
 
 - ✅ **Progressive Web App (PWA)** – Installable on phones, works offline
+- ✅ **Live Clock & Date** – Real-time date/time in the headers, read from the device clock (works offline)
+- ✅ **Live Location** – Requests geolocation permission and tracks your live position with a place name
 - ✅ **Responsive Design** – Desktop sidebar, tablet nav, mobile bottom nav (same React app)
 - ✅ **6 Role Workspaces** – Patient, Doctor, Specialist, Health Worker, PHC, Admin
 - ✅ **Multi-Language** – 12 Indian languages (English, Hindi, Tamil, Telugu, Marathi, Bengali, Gujarati, Kannada, Malayalam, Oriya, Punjabi, Urdu)

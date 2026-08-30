@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { BellIcon, MailIcon } from 'lucide-react';
 import { LanguageSelector } from './LanguageSelector';
 import { Logo } from './Logo';
+import { LiveDateTime } from './LiveDateTime';
 import { Avatar } from '../common/Avatar';
 
 interface DashboardHeaderProps {
@@ -30,6 +31,10 @@ export function DashboardHeader({
       <div className="hidden min-w-0 md:block">
         <p className="truncate text-xs font-semibold text-navy">{userName}</p>
         <p className="truncate text-2xs text-ink-400">{userMeta}</p>
+      </div>
+
+      <div className="flex min-w-0 flex-1 items-center justify-center px-2">
+        <LiveDateTime className="hidden md:flex" />
       </div>
 
       <div className="ml-auto flex items-center gap-2">

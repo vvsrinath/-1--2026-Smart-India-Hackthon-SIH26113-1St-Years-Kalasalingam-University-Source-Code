@@ -4,6 +4,7 @@ import { ArrowRightIcon } from 'lucide-react';
 import { SearchBar } from '../../components/common/SearchBar';
 import { Button } from '../../components/common/Button';
 import { SectionHeading } from '../../components/common/SectionHeading';
+import { LocationBadge } from '../../components/common/LocationBadge';
 import { HealthcareCard } from '../../components/healthcare/HealthcareCard';
 import { HealthcareMap } from '../../components/maps/HealthcareMap';
 import { heroImage, quickActions, trustStats } from '../../data/siteContent';
@@ -50,6 +51,13 @@ export function Home() {
             alt="Illustration of healthcare locations across India, connecting rural and urban communities"
             className="h-full w-full object-cover" />
           
+        </div>
+      </section>
+
+      {/* Live location */}
+      <section aria-label="Live location" className="pb-10">
+        <div className="rounded-card border border-line bg-white p-3.5 sm:p-4">
+          <LocationBadge />
         </div>
       </section>
 

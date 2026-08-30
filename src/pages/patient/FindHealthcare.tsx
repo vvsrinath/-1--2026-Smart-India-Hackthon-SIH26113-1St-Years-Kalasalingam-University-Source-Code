@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { MapPinIcon, SlidersHorizontalIcon } from 'lucide-react';
 import { SearchBar } from '../../components/common/SearchBar';
 import { Dropdown } from '../../components/common/Dropdown';
+import { LocationBadge } from '../../components/common/LocationBadge';
 import { FacilityCard } from '../../components/healthcare/FacilityCard';
 import { HealthcareMap } from '../../components/maps/HealthcareMap';
 import { EmptyState } from '../../components/common/EmptyState';
@@ -88,6 +89,10 @@ export function FindHealthcare() {
         )}
         </div>
       }
+
+      <div className="rounded-card border border-line bg-white px-3 py-2.5">
+        <LocationBadge />
+      </div>
 
       <div className="grid gap-3 lg:grid-cols-[340px_minmax(0,1fr)]">
         <div className="space-y-2">

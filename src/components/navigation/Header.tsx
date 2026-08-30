@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { MenuIcon, XIcon } from 'lucide-react';
 import { Logo } from './Logo';
 import { LanguageSelector } from './LanguageSelector';
+import { LiveDateTime } from './LiveDateTime';
 import { publicNav } from '../../data/navigation';
 import { cn } from '../../utils/cn';
 
@@ -38,6 +39,7 @@ export function Header() {
         </nav>
 
         <div className="ml-auto hidden items-center gap-2.5 lg:flex">
+          <LiveDateTime className="hidden xl:flex" />
           <LanguageSelector />
           <Link
             to="/login"
