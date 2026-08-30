@@ -11,16 +11,15 @@ interface InstallAppBannerProps {
 
 export function InstallAppBanner({ onDismiss }: InstallAppBannerProps) {
   const { canInstall, install, isInstalled, isIOS, showInstall } = usePwa();
-  const { isDesktop, isTablet, os } = useDesktop();
+  const { isDesktop, isTablet } = useDesktop();
 
   // Hidden once installed.
   if (isInstalled) return null;
 
-  // Desktop computers: recommend the native desktop app with OS auto-detection.
+  // Desktop computers: recommend installing the PWA as a native desktop app.
   if (isDesktop) {
     return (
       <DesktopAppBanner
-        os={os}
         canInstall={canInstall}
         install={install}
         onDismiss={onDismiss}
