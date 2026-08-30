@@ -20,8 +20,9 @@ This is currently a frontend demo. The screens use local demo data, so there is 
 
 ## 📚 Documentation
 
-- **[PWA_TESTING_GUIDE.md](PWA_TESTING_GUIDE.md)** – How to test install prompt, offline mode, service worker
-- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** – Deploy to Netlify, Vercel, Docker, or custom servers
+- **[FILE_STRUCTURE.md](docs/FILE_STRUCTURE.md)** – Map of every folder and file in the repo
+- **[PWA_TESTING_GUIDE.md](docs/PWA_TESTING_GUIDE.md)** – How to test install prompt, offline mode, service worker
+- **[DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md)** – Deploy to Netlify, Vercel, Docker, or custom servers
 
 ## Run The App
 
@@ -117,6 +118,8 @@ Specialist screens use `SpecialistLayout` and follow the same pattern as the doc
 
 ## Folder Guide
 
+A quick view of the layout. For an annotated, file-by-file map, see **[docs/FILE_STRUCTURE.md](docs/FILE_STRUCTURE.md)**.
+
 ```text
 .
 ├── index.html                    Vite entry HTML (title, favicon, PWA meta)
@@ -127,6 +130,11 @@ Specialist screens use `SpecialistLayout` and follow the same pattern as the doc
 ├── tsconfig.json / tsconfig.node.json   TypeScript config
 ├── package.json                  npm scripts and dependencies
 ├── .github/workflows/deploy.yml  GitHub Pages build & deploy (optional)
+│
+├── docs/                         Project guides
+│   ├── FILE_STRUCTURE.md         Map of every folder and file
+│   ├── DEPLOYMENT_GUIDE.md       Deploy to Netlify, Vercel, Docker, etc.
+│   └── PWA_TESTING_GUIDE.md      Test install prompt, offline, service worker
 │
 ├── public/                       Static files copied as-is to the build
 │   ├── index.html assets not needed here
