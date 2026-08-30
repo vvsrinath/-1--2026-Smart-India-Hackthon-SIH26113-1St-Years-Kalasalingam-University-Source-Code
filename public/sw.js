@@ -1,9 +1,13 @@
-const CACHE_NAME = 'swasthya-sathi-v3';
+const CACHE_NAME = 'swasthya-sathi-v4';
 const APP_SHELL = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
-  '/swastya-sathi-mark.svg',
+  '/logo.png',
+  '/favicon.png',
+  '/icons/apple-touch-icon.png',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
   '/sw.js'
 ];
 

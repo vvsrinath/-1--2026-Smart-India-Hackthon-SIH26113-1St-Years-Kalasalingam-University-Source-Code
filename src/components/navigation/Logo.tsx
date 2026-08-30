@@ -12,9 +12,9 @@ interface LogoProps {
 export function Logo({ to = '/', size = 'sm', className }: LogoProps) {
   const mark = (
     <img
-      src="/swastya-sathi-mark.svg"
+      src="/logo.png"
       alt=""
-      className={cn('shrink-0', size === 'md' ? 'h-12 w-12' : 'h-9 w-9')}
+      className={cn('shrink-0 object-contain', size === 'md' ? 'h-12 w-12' : 'h-9 w-9')}
       aria-hidden="true"
     />
   );

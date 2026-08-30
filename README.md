@@ -178,7 +178,7 @@ Add new translated strings to the English dictionary first, then add the same ke
 ## Branding And Styling
 
 - `index.html` contains the browser title and favicon.
-- `public/swastya-sathi-mark.svg` is the Swastya Sathi app mark.
+- `public/logo.png` is the Swastya Sathi logo (favicon, PWA icons and in-app header mark).
 - `src/components/navigation/Logo.tsx` displays the mark and wordmark across the application.
 - `tailwind.config.js` contains the brand colors, spacing extensions, shadows, and font settings.
 - `src/index.css` contains global styles and the Leaflet map stylesheet.
