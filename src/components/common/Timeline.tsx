@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckIcon, ClockIcon, CircleIcon } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import type { JourneyStep } from '../../types';

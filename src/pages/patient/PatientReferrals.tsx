@@ -1,4 +1,3 @@
-import React from 'react';
 import { Panel } from '../../components/common/Panel';
 import { Timeline } from '../../components/common/Timeline';
 import { ReferralCard } from '../../components/healthcare/ReferralCard';

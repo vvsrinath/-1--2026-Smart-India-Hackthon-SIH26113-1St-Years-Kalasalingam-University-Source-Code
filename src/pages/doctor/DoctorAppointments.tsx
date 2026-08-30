@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Panel } from '../../components/common/Panel';
 import { Tabs } from '../../components/common/Tabs';
 import { Button } from '../../components/common/Button';

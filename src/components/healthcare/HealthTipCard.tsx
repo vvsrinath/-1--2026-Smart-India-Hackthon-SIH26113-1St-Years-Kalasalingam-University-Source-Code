@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRightIcon } from 'lucide-react';
 import type { HealthTip } from '../../types';
 

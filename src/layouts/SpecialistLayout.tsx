@@ -1,4 +1,3 @@
-import React from 'react';
 import { WorkspaceLayout } from './WorkspaceLayout';
 import { specialistNav } from '../data/navigation';
 import { currentSpecialist } from '../data/demoSpecialists';

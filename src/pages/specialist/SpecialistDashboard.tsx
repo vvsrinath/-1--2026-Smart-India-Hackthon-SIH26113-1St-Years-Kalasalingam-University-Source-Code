@@ -1,4 +1,3 @@
-import React from 'react';
 import { CalendarDaysIcon, HeartPulseIcon, RepeatIcon } from 'lucide-react';
 import { Panel } from '../../components/common/Panel';
 import { StatCard } from '../../components/dashboard/StatCard';

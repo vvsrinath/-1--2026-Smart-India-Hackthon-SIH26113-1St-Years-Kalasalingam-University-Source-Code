@@ -1,12 +1,11 @@
-import React from "react";
 import { Panel } from "./Panel";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./Button";
-import { BoxIcon } from "lucide-react";
+import { type LucideIcon } from "lucide-react";
 interface WorkspacePlaceholderProps {
   title: string;
   subtitle: string;
-  icon: BoxIcon;
+  icon: LucideIcon;
   emptyTitle: string;
   emptyDescription: string;
   actionLabel?: string;

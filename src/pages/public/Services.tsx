@@ -1,4 +1,3 @@
-import React from 'react';
 import { SectionHeading } from '../../components/common/SectionHeading';
 import { HealthcareCard } from '../../components/healthcare/HealthcareCard';
 import { services } from '../../data/siteContent';

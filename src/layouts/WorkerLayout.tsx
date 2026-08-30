@@ -1,4 +1,3 @@
-import React from 'react';
 import { WorkspaceLayout } from './WorkspaceLayout';
 import { workerNav } from '../data/navigation';
 

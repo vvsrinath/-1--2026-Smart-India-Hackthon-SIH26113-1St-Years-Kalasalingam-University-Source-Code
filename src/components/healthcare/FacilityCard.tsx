@@ -1,4 +1,3 @@
-import React from 'react';
 import { BuildingIcon } from 'lucide-react';
 import { Rating } from '../common/Rating';
 import { cn } from '../../utils/cn';

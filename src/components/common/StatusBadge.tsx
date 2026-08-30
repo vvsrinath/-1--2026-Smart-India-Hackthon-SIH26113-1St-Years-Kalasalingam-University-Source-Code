@@ -1,4 +1,3 @@
-import React from 'react';
 import { cn } from '../../utils/cn';
 
 type Tone = 'pending' | 'success' | 'info' | 'neutral' | 'danger';

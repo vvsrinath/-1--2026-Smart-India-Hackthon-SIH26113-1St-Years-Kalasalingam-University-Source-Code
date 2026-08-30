@@ -1,4 +1,3 @@
-import React from 'react';
 import { WorkspaceLayout } from './WorkspaceLayout';
 import { phcNav } from '../data/navigation';
 

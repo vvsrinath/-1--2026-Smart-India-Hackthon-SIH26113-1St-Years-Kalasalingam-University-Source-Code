@@ -1,4 +1,3 @@
-import React from 'react';
 import { Panel } from '../../components/common/Panel';
 import { Avatar } from '../../components/common/Avatar';
 import { StatusBadge } from '../../components/common/StatusBadge';

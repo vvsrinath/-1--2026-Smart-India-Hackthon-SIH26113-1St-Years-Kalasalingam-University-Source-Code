@@ -1,4 +1,3 @@
-import React from 'react';
 import { GlobeIcon } from 'lucide-react';
 import { Dropdown } from '../common/Dropdown';
 import { useLanguage } from '../../context/LanguageContext';

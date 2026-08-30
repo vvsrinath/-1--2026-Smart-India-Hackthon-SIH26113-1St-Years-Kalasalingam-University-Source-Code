@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "../../utils/cn";
-import { BoxIcon } from "lucide-react";
+import { type LucideIcon } from "lucide-react";
 interface StatCardProps {
-  icon: BoxIcon;
+  icon: LucideIcon;
   label: string;
   value?: string;
   caption?: string;

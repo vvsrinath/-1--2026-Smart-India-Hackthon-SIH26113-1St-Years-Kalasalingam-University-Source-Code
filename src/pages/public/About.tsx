@@ -1,4 +1,3 @@
-import React from 'react';
 import { aboutPoints, aboutValues, doctorImage } from '../../data/siteContent';
 
 export function About() {

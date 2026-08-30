@@ -1,5 +1,4 @@
-import React from 'react';
-import { PillIcon, AlertCircleIcon, CheckCircleIcon } from 'lucide-react';
+import { AlertCircleIcon, CheckCircleIcon } from 'lucide-react';
 import { SectionHeading } from '../../components/common/SectionHeading';
 import { Panel } from '../../components/common/Panel';
 import { StatusBadge } from '../../components/common/StatusBadge';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { WifiOffIcon, WifiIcon } from 'lucide-react';
 import { usePwa } from '../../hooks/usePwa';
 

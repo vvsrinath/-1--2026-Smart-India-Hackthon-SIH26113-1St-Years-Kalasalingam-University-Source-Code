@@ -1,4 +1,3 @@
-import React from 'react';
 import { SectionHeading } from '../../components/common/SectionHeading';
 import { howItWorksSteps } from '../../data/siteContent';
 

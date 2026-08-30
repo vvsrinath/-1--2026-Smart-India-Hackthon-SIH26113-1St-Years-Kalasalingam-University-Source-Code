@@ -32,7 +32,7 @@ export function Input({ label, hint, icon, className, id, ...rest }: InputProps)
             'h-9 w-full rounded-chip border border-line bg-white text-xs text-navy placeholder:text-ink-400',
             'px-3 transition-colors duration-150 ease-out',
             'focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/15',
-            icon && 'pl-9',
+            icon ? 'pl-9' : undefined,
             className
           )}
           {...rest} />

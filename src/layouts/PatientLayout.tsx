@@ -1,4 +1,3 @@
-import React from 'react';
 import { WorkspaceLayout } from './WorkspaceLayout';
 import { patientNav } from '../data/navigation';
 import { currentPatient } from '../data/demoPatients';

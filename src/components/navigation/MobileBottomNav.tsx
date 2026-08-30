@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { cn } from '../../utils/cn';
 import type { NavItem } from '../../data/navigation';

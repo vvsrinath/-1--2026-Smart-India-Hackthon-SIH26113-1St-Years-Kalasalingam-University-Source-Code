@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { BellIcon, MailIcon } from 'lucide-react';
 import { LanguageSelector } from './LanguageSelector';

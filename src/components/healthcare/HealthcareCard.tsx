@@ -1,9 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "../../utils/cn";
-import { BoxIcon } from "lucide-react";
+import { type LucideIcon } from "lucide-react";
 interface HealthcareCardProps {
-  icon: BoxIcon;
+  icon: LucideIcon;
   title: string;
   description: string;
   to?: string;

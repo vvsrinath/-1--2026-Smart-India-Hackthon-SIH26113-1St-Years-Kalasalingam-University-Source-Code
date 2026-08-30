@@ -1,8 +1,6 @@
-import React from 'react';
 import {
   CalendarDaysIcon,
   ChevronRightIcon,
-  FileTextIcon,
   FolderOpenIcon,
   HeartPulseIcon,
   MapPinIcon,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
 import { SectionHeading } from '../../components/common/SectionHeading';
 import { Input } from '../../components/common/Input';

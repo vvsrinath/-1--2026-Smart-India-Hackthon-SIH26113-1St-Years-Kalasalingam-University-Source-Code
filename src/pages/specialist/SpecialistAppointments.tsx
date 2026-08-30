@@ -1,4 +1,3 @@
-import React from 'react';
 import { Panel } from '../../components/common/Panel';
 import { AppointmentCard } from '../../components/healthcare/AppointmentCard';
 import { specialistSchedule } from '../../data/demoAppointments';

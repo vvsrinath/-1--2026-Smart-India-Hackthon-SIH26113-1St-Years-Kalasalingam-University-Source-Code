@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar } from '../common/Avatar';
 import { StatusBadge } from '../common/StatusBadge';
 import { cn } from '../../utils/cn';

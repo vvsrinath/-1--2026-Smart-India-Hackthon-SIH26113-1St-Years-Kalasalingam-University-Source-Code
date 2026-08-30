@@ -1,4 +1,3 @@
-import React from 'react';
 import { BellRingIcon, CalendarCheckIcon } from 'lucide-react';
 import { Panel } from '../../components/common/Panel';
 import { StatusBadge } from '../../components/common/StatusBadge';

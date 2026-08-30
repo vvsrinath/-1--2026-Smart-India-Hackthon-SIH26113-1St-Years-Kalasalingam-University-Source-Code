@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { MapPinIcon, SlidersHorizontalIcon } from 'lucide-react';
 import { SearchBar } from '../../components/common/SearchBar';
 import { Dropdown } from '../../components/common/Dropdown';

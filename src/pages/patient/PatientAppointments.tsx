@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { CheckIcon } from 'lucide-react';
 import { Panel } from '../../components/common/Panel';
 import { Button } from '../../components/common/Button';
