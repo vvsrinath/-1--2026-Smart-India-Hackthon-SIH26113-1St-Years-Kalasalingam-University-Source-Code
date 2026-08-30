@@ -15,8 +15,9 @@ function detectBrowser(): Browser {
   if (ua.includes('edg/')) return 'edge';
   if (ua.includes('opr/') || ua.includes('opera')) return 'opera';
   if (ua.includes('firefox')) return 'firefox';
+  // Chrome's UA also contains "Safari", so check Chrome first.
+  if (ua.includes('chrome') || ua.includes('crios')) return 'chrome';
   if (ua.includes('safari')) return 'safari';
-  if (ua.includes('chrome')) return 'chrome';
   return 'other';
 }
 

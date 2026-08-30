@@ -11,7 +11,7 @@ This document describes how to test and verify all Progressive Web App (PWA) fea
 ### Current Strategy
 - **HTML Pages**: Network-first (try online first, fall back to cache)
 - **Assets (CSS, JS, Images, Fonts)**: Cache-first (use cached, update in background)
-- **Cache Version**: `swasthya-sathi-v2`
+- **Cache Version**: `swasthya-sathi-v4`
 - **Auto-updates**: Cache purges old versions on activation
 
 ### Features
@@ -27,20 +27,25 @@ This document describes how to test and verify all Progressive Web App (PWA) fea
 ### How It Works
 1. **Detection**: Browser detects PWA-capable device after user interaction
 2. **Banner**: Non-intrusive install prompt appears in-app
-3. **Install**: User taps "Install App" to add to home screen
+3. **Install**: User taps "Install phone" (or "Install for tab" on tablets) to add to home screen
 4. **Standalone**: App runs fullscreen without browser UI
 
 ### Where to Find It
 - **Location**: Fixed banner at bottom-left (mobile) or bottom-right (desktop)
-- **Code**: [src/components/pwa/InstallAppBanner.tsx](../src/components/pwa/InstallAppBanner.tsx)
-- **Logic**: [src/hooks/usePwa.ts](../src/hooks/usePwa.ts)
+- **Code**: [src/components/pwa/InstallAppBanner.tsx](../src/components/pwa/InstallAppBanner.tsx) + [src/components/pwa/DesktopAppBanner.tsx](../src/components/pwa/DesktopAppBanner.tsx)
+- **Logic**: [src/hooks/usePwa.ts](../src/hooks/usePwa.ts), [src/hooks/useDesktop.ts](../src/hooks/useDesktop.ts)
+
+### Device-Specific Wording
+- **Phone** → "Install phone"
+- **Tablet** → "Install for tab"
+- **Desktop PC** → "Install the desktop app" (installs the PWA with its own window)
 
 ### Testing on Mobile
 **Chrome/Edge on Android:**
-1. Open http://localhost:5174/ on phone
+1. Open http://localhost:5173/ on phone
 2. Wait 3-5 seconds for page to load completely
 3. Look for install prompt at bottom of screen
-4. Tap "Install App"
+4. Tap "Install phone" (or "Install for tab" on tablets)
 5. App installs and appears on home screen
 
 **Safari on iOS 15+:**
@@ -52,6 +57,24 @@ If automatic prompt doesn't appear:
 1. Open DevTools (F12) → Application tab
 2. Check "Offline" to simulate PWA environment
 3. Prompt may appear after reload
+
+## 🖥️ Desktop Install (PC)
+
+### How It Works
+1. **Detection**: App detects a desktop computer (fine pointer + hover)
+2. **Banner**: "Install the desktop app" prompt appears in the bottom-right
+3. **Installable browser (Chrome/Edge/Opera)**: "Install now" opens the browser's real install dialog — the app installs as a standalone window (no browser tabs)
+4. **Other browsers (Firefox/Safari)**: Shows per-browser steps (menu → Install App / File → Add to Dock)
+
+### Native Title Bar (Window Controls Overlay)
+When installed on desktop Chromium and the window opens in overlay mode, the app draws its own draggable title bar with the logo and OS badge; the OS provides minimize/maximize/close in the top corner.
+
+### Testing on Desktop
+1. Open http://localhost:5173/ in Chrome or Edge on a PC
+2. The "Install the desktop app" banner shows in the bottom-right
+3. Click "Install now" → confirm the browser install dialog
+4. Launch the installed app — it opens in its own window, no browser UI
+5. Verify the title bar area is draggable to move the window
 
 ---
 
@@ -108,10 +131,12 @@ If automatic prompt doesn't appear:
   "description": "Connecting Every Village to Better Healthcare",
   "start_url": "/",                           // Launch page
   "display": "standalone",                    // Hide browser UI
+  "display_override": ["window-controls-overlay", "standalone"],  // Native title bar on desktop
   "orientation": "portrait",                  // Mobile orientation
   "background_color": "#f5faf7",              // Splash screen color
   "theme_color": "#0b6b3a",                   // Status bar color
   "icons": [
+    {"src": "/logo.png", "sizes": "any", "purpose": "any"},
     {"src": "/icons/icon-192.png", "sizes": "192x192", "purpose": "any"},
     {"src": "/icons/icon-512.png", "sizes": "512x512", "purpose": "any"},
     {"src": "/icons/icon-maskable.png", "sizes": "512x512", "purpose": "maskable"}
@@ -121,6 +146,7 @@ If automatic prompt doesn't appear:
 
 ### Key Settings
 - **Display Mode**: `standalone` = fullscreen app, no browser chrome
+- **Display Override**: `window-controls-overlay` enables the native draggable title bar on installed desktop apps
 - **Orientation**: `portrait` = locks to portrait on phones (can rotate with device)
 - **Theme Color**: `#0b6b3a` = brand green for status bar on Android
 - **Icons**: Maskable icon supports adaptive icons on Android 12+
@@ -137,7 +163,7 @@ If automatic prompt doesn't appear:
 
 ### Cache Validation
 - [ ] DevTools → Application → Cache Storage
-- [ ] Expand `swasthya-sathi-v2`
+- [ ] Expand `swasthya-sathi-v4`
 - [ ] See app shell cached: `/`, `/index.html`, `/manifest.webmanifest`, `/sw.js`
 - [ ] After visiting pages, CSS and JS assets appear in cache
 
@@ -152,9 +178,17 @@ If automatic prompt doesn't appear:
 ### Install Prompt Testing (Android)
 - [ ] Open in Chrome on Android phone
 - [ ] Wait for install banner
-- [ ] Tap "Install App"
+- [ ] Tap "Install phone" (phones) or "Install for tab" (tablets)
 - [ ] App appears on home screen
 - [ ] Launch app → Opens in standalone mode (no URL bar)
+
+### Install Prompt Testing (Desktop)
+- [ ] Open in Chrome or Edge on a PC
+- [ ] "Install the desktop app" banner shows bottom-right
+- [ ] Click "Install now" → browser install dialog appears
+- [ ] App launches in its own window with no browser UI
+- [ ] Installed window shows the custom draggable title bar
+- [ ] No navigation to any external site from the banner
 
 ### Manifest Validation
 - [ ] DevTools → Application → Manifest
@@ -177,6 +211,11 @@ If automatic prompt doesn't appear:
 3. Check: Is service worker installed? (DevTools → Application → Service Workers)
 4. Try on different device or browser (Chrome/Edge works best)
 5. iOS: Manual install via Share → Add to Home Screen
+6. Desktop (Firefox/Safari): use the on-screen "How to install" steps instead
+
+### Issue: Desktop Banner Shows "How to install" Instead of "Install now"
+**Cause:** The browser did not fire `beforeinstallprompt` (Firefox, Safari, or install already dismissed).
+**Solution:** Follow the on-screen steps for your browser — Chrome/Edge install from the address-bar icon, Firefox from the ☰ menu, Safari from File → Add to Dock.
 
 ### Issue: Service Worker Not Updating
 **Solution:**
@@ -189,7 +228,7 @@ If automatic prompt doesn't appear:
 
 ### Issue: App Still Shows Old Content After Update
 **Solution:**
-1. Cache version updated to `v2` after rebuild
+1. Cache version updated to `v4` after rebuild
 2. Service worker auto-purges old cache on activation
 3. Clear browser cache manually: DevTools → Application → Storage → Clear site data
 4. Full reload or hard refresh
@@ -281,8 +320,9 @@ When app launches standalone:
 ## ✨ Current Deployment Status
 
 ✅ **Service Worker**: Enhanced with network/cache-first strategies  
-✅ **Manifest**: Complete with all icons and metadata  
-✅ **Install Banner**: Ready for phones and tablets  
+✅ **Manifest**: Complete with `window-controls-overlay`, all icons and metadata  
+✅ **Install Banner**: Device-wise prompts (phone / tablet / desktop)  
+✅ **Desktop App**: Native draggable title bar on installed desktop PWAs  
 ✅ **Offline Support**: App shell cached, demo data available  
 ✅ **Build**: Production-ready (npm run build)  
 
